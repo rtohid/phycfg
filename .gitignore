@@ -7,4 +7,6 @@ __pycache__/
 *.swp
 *.pyc
 __phy_copy*
-
+_scratchpad.py
+*.o
+*.so
