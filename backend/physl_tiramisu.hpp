@@ -30,22 +30,14 @@ class PhyslFunction : public function, generator {
     }
 
     void lift_dist_computations() {
-std::cout << "\tbefore" << std::endl;
         lift_dist_comps();
-std::cout << "\tafter" << std::endl;
     }
 
     void generate_code(std::vector< buffer* > & bufs, std::string &physlstr) {
-
-std::cout << "here1" << std::endl;
         set_arguments(bufs);
-std::cout << "here2" << std::endl;
         lift_dist_computations();
-std::cout << "here3" << std::endl;
         gen_time_space_domain();
-std::cout << "here4" << std::endl;
         gen_isl_ast();
-std::cout << "here5" << std::endl;
         physl::codegen::generate_physl(
             this->get_isl_ctx(),
             this->get_isl_ast(),
